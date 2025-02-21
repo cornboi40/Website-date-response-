@@ -2,14 +2,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Form</title>
+    <title>Hi Nuva&#128151</title>
     <link rel="stylesheet" href="style.css">
 </head>
   <div class="container">
-    <form method="post" action="https://script.google.com/macros/s/AKfycbxgXEUy4BiiJ2yQqKQBVspl9WYPu9Gr9D1ExqtBTniPQeODgoC6Pci9BDPCRO8uYJAmRA/exec" name="contact-form">
-      <h4>What do you say ?</h4>
+    <form id="contact-form">
+      <h4>helloo cutie?</h4>
       <textarea name="her-answer" rows="7" placeholder="&#128151 What do you say cutie? &#128151"></textarea>
       <input type="submit" value="Send" id="Send">
-		</form>
-	</div>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("contact-form").addEventListener("submit", function(event) {
+      event.preventDefault(); // Prevents the default page redirection
+
+      // Collect form data
+      let formData = new FormData(this);
+
+      // Send the data using Fetch API
+      fetch("https://script.google.com/macros/s/AKfycbxgXEUy4BiiJ2yQqKQBVspl9WYPu9Gr9D1ExqtBTniPQeODgoC6Pci9BDPCRO8uYJAmRA/exec", {
+        method: "POST",
+        body: formData
+      })
+      .then(response => response.json()) // Convert response to JSON
+      .then(data => {
+        alert("Thanks pookie, your message has been sent! 💌");
+        location.reload(); // Refresh the page after submission
+      })
+      .catch(error => console.error("Error:", error));
+    });
+  </script>
 </body>
