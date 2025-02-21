@@ -11,6 +11,10 @@ body{
 	align-items: center;
 	justify-content: center;
         background-color: #f76fa8; 
+        background-image: url("cats4.jpg");
+        background-size: 400px; /* Adjust the size of each image */
+        background-position: 0px 0px; /* Adds 100px gap */
+        background-repeat: repeat; /* Repeats the image */
 }  
 .container{
 	width: 500px;
